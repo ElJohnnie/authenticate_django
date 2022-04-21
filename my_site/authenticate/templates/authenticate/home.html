@@ -1,15 +1,14 @@
 {% extends 'authenticate/base.html' %}
 
 {% block content %}
+<div class="container border">
+	<h1> Home page</h1>
+	{% if user.is_authenticated %}
+		<p>Nome: {{user.first_name}} {{ user.last_name}}</p>
+		<p>Usuário: {{user.username}}</p>
+		
+		<p>Email: {{user.email}}</p>
 
-<h1> Home page</h1>
-
-{% if user.is_authenticated %}
-	<p>Nome: {{user.first_name}} {{ user.last_name}}</p>
-	<p>Usuário: {{user.username}}</p>
-	
-	<p>Email: {{user.email}}</p>
-
-{% endif %}
-
+	{% endif %}
+</div>
 {% endblock %}

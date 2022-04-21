@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 LOGIN_URL = 'two_factor:login'
 # this one is optional
-LOGIN_REDIRECT_URL = 'two_factor:profile'
+# LOGIN_REDIRECT_URL = 'two_factor:profile'
 
 # Application definition
 
