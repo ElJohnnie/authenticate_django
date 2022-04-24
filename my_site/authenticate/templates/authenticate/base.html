@@ -28,20 +28,20 @@
           <a class="nav-link" href="{% url 'home' %}">Início</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="{% url 'home' %}">Dados do usuário</a>
+          <a class="nav-link" href="#">Dados do usuário</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="{% url 'vacines' %}">Vacinas</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="{% url 'vacines' %}">Histórico médico</a>
+          <a class="nav-link" href="#">Histórico médico</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="{% url 'logout' %}">Logout</a>
         </li>
-        <li class="nav-item active">
+        {% comment %} <li class="nav-item active">
           <a class="nav-link" href="{% url 'edit_profile' %}">Editar Perfil</a>
-        </li>
+        </li> {% endcomment %}
         {% else %}
         <li class="nav-item active">
           {% comment %} <a class="nav-link" href="{% url 'two_factor:login' %}">Login</a> {% endcomment %}
