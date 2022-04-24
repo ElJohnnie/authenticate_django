@@ -49,7 +49,7 @@ def edit_profile(request):
 		form = EditProfileForm(request.POST, instance= request.user)
 		if form.is_valid():
 			form.save()
-			messages.success(request, ('Você editou sem perfil'))
+			messages.success(request, ('Você editou seu perfil'))
 			return redirect('home')
 	else: 		#passes in user information 
 		form = EditProfileForm(instance= request.user) 
