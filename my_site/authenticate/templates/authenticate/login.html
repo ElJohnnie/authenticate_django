@@ -2,23 +2,26 @@
 
 {% block content %}
 {% load static %}
-<h2 class ="text-center">Login</h2>
 
-<div class = "col-md-6 offset-md-3 py-3">
+
+<div class = "containerLogin col-md-6 offset-md-3 py-5  border">
 	<div class="d-flex justify-content-center">
 		<img src="{% static 'img/logo.png' %}" class="img-fluid" alt="">
 	</div> 
+	<h2 class ="text-center m-3" >Login</h2>
 	<form method ="POST">
 			{% csrf_token %}
 		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Teste" name ="username">
+			<input type="text" class="form-control" placeholder="Usuário" name ="username">
 		</div>
-		<div class="form-group">
-			<input type="password" class="form-control"  placeholder="Enter Password" name="password"> 
+		<div class="form-group ">
+			<input type="password" class="form-control"  placeholder="Senha" name="password"> 
+			<a class="d-flex justify-content-end mt-2" href="#">Esqueceu sua senha?</a>
 		</div>
-		<div class="d-flex offset-md-3 flex-column p-2 w-50"> 
-			<button type="submit" class="btn btn-secondary mb-3">Login</button>
-			<button class="btn btn-secondary">Login</button>
+		<div class="row justify-content-center flex-column mt-5 ">
+			
+			<button type="submit" class="botton login">Entrar</button>
+			<button class="botton register ">Efetue seu cadastro</button>
 		</div>
 	</form>
 </div>

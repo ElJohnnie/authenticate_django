@@ -47,7 +47,8 @@ table {
 }
 
 .main {
-    width: 100%;
+    height: 75vh;
+    width: 95vh;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -60,7 +61,37 @@ footer {
 }
 
 .container {
-    padding: 60px 15px 0;
+     padding: 60px 15px 0;
+}
+
+.containerLogin {
+    height: 70vh;
+    margin-top: 25px;
+}
+
+
+.botton, .login {
+    background: #72c0b8;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+   align-items: center;
+    font-size: 18px;
+    height: 38px;
+   
+    margin: 20px auto 5px;
+    width: 300px;
+   
+}
+
+.register {
+    background-color: #84b0da;
+}
+
+.botton:hover {
+    height: 45px;
+    width: 305px;
+    font-weight: bold;
 }
 
 @media (min-width: 1200px) {
