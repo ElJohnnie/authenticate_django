@@ -45,6 +45,7 @@
                 id="batch" 
                 name="batch" 
                 onkeypress='validateKeyNumbers(event)'
+                required
             >
         </div>
         <div class="form-group">
@@ -54,7 +55,8 @@
                 class="form-control" 
                 id="vaccinator" 
                 name="vaccinator"
-                onkeypress='validateKeyNumbers(event)' 
+                onkeypress='validateKeyNumbers(event)'
+                required 
             >
         </div>
         <div class="form-row">
@@ -65,12 +67,13 @@
                     class="form-control" 
                     id="healthcenter" 
                     name="healthcenter"
+                    required
                 >
             </div>
         </div>
         <div class="form-group">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <input class="form-check-input" type="checkbox" id="gridCheck" required>
                 <label class="form-check-label" for="gridCheck">
                 Dados conferidos
                 </label>
