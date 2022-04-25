@@ -47,7 +47,7 @@ table {
 }
 
 .main {
-    height: 75vh;
+    min-height: 75vh;
     width: 95vh;
     padding-right: 15px;
     padding-left: 15px;
@@ -64,8 +64,8 @@ footer {
      padding: 60px 15px 0;
 }
 
-.containerLogin {
-    height: 70vh;
+.container-login {
+    min-height: 70vh;
     margin-top: 25px;
 }
 
