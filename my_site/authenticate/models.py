@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Vacines(models.Model):
+    id = models.AutoField(primary_key=True)
     date = models.DateField(
         blank=False,
         null=False,
@@ -15,7 +16,6 @@ class Vacines(models.Model):
     )
 
     dose = models.IntegerField(
-        max_length=3,
         blank=False,
         null=False,
     )
@@ -33,4 +33,6 @@ class Vacines(models.Model):
     )
 
     objects = models.Manager()
+
+
 
