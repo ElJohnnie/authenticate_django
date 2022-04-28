@@ -1,8 +1,8 @@
 {% extends 'authenticate/base.html' %}
 {% block content %}
-	{% load static %}
-<div class="container mx-auto">
-    <form>
+{% load static %}
+<section class="mb-5">
+    <form method="POST" class="border p-3">
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="date">Data</label>
@@ -37,30 +37,30 @@
                 >
             </div>
         </div>
-        <div class="form-group">
-            <label for="batch">Código do lote</label>
-            <input 
-                type="text" 
-                class="form-control" 
-                id="batch" 
-                name="batch" 
-                onkeypress='validateKeyNumbers(event)'
-                required
-            >
-        </div>
-        <div class="form-group">
-            <label for="vaccinator">Código do aplicador</label>
-            <input 
-                type="text" 
-                class="form-control" 
-                id="vaccinator" 
-                name="vaccinator"
-                onkeypress='validateKeyNumbers(event)'
-                required 
-            >
-        </div>
         <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-4">
+                <label for="batch">Código do lote</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="batch" 
+                    name="batch" 
+                    onkeypress='validateKeyNumbers(event)'
+                    required
+                >
+            </div>
+            <div class="form-group col-md-4">
+                <label for="vaccinator">Código do aplicador</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="vaccinator" 
+                    name="vaccinator"
+                    onkeypress='validateKeyNumbers(event)'
+                    required 
+                >
+            </div>
+            <div class="form-group col-md-4">
                 <label for="healthcenter">Estabelecimento de saúde</label>
                 <input 
                     type="text"
@@ -81,7 +81,42 @@
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
-</div>
+</section>
+<section>
+    <div class="mb-4 head-vacines d-flex justify-content-center">
+        <h3>Agenda vacinas</h3>
+    </div>
+    <table class="table mb-5">
+        <thead class="thead-white">
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+        </table>
+</section>
 <script>
     function validateKeyNumbers(evt) {
         var theEvent = evt || window.event;

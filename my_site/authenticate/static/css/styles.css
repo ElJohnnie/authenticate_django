@@ -47,13 +47,12 @@ table {
 }
 
 .main {
-    min-height: 75vw;
-    width: 95vh;
+    min-height: 75vh;
+    width: auto;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    min-height: 70vh !important;
 }
 
 footer {
@@ -95,22 +94,22 @@ footer {
     background-color: #5088bd;
     transition: all .2s;
 }
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
     .container {
         max-width: 1140px;
     }
 }
-@media (min-width: 992px) {
+@media (max-width: 992px) {
     .container {
         max-width: 960px;
     }
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .container {
         max-width: 720px;
     }
 }
-@media (min-width: 576px) {
+@media (max-width: 576px) {
     .container {
         max-width: 540px;
     }
