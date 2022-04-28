@@ -1,3 +1,7 @@
 my_site\db.sqlite3
 my_site\mysite\__pycache__\*
-my_site\authenticate\__pycache__\*
+my_site\authenticate\__pycache_
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
