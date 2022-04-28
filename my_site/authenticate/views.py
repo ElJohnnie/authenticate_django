@@ -79,3 +79,6 @@ def vacines(request):
 
 def history(request): 
 	return render(request, 'authenticate/history.html', {})
+
+def history_vacines(request):
+	return render(request, 'authenticate/history_vacines.html', {})
