@@ -54,6 +54,8 @@ table {
     margin-right: auto;
     margin-left: auto;
     min-height: 70vh !important;
+    
+
 }
 
 footer {
@@ -97,13 +99,7 @@ footer {
     
 }
 
-.container-patient {
-    min-height: 62vh;
-    width: 95%;
-    margin-top: 15px;
-    max-width: auto !important;
-    padding: 15px;
-}
+
 @media (min-width: 1200px) {
     .container {
         max-width: 1140px;
