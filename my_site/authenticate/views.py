@@ -76,3 +76,6 @@ def change_password(request):
 	
 def vacines(request): 
 	return render(request, 'authenticate/vacines.html', {})
+
+def history(request): 
+	return render(request, 'authenticate/history.html', {})
