@@ -58,19 +58,21 @@
 </nav>
 <br/>
 <main role="main" class="main">
-  {% if messages %}
-    {% for message in messages %}
-      <div class="alert alert-danger alart-dismissable" role ="alert">
-          <button class="close" data-dismiss="alert">
-              <small><sup>x</sup></small>
-            </button>
-          {{ message }}
-        </div>
-      {% endfor%}
-    {% endif %}
-  {% block content %}
+  <div class="container mx-auto">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-danger alart-dismissable" role ="alert">
+            <button class="close" data-dismiss="alert">
+                <small><sup>x</sup></small>
+              </button>
+            {{ message }}
+          </div>
+        {% endfor%}
+      {% endif %}
+    {% block content %}
 
-  {% endblock %}
+    {% endblock %}
+  </div>
 </main>
 <footer class="footer border-top">
   <div class="d-flex justify-content-center py-3">
