@@ -79,7 +79,9 @@
                 </label>
             </div>
         </div>
+        
         <button type="submit" class="btn btn-primary">Enviar</button>
+        <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-info">Voltar</a>
     </form>
 </section>
 <section>
