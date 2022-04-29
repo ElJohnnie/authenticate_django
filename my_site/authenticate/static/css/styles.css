@@ -48,12 +48,14 @@ table {
 
 .main {
     min-height: 75vw;
-    width: 95vh;
+    width: 100%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
     min-height: 70vh !important;
+    
+
 }
 
 footer {
@@ -94,7 +96,10 @@ footer {
 .register:hover {
     background-color: #5088bd;
     transition: all .2s;
+    
 }
+
+
 @media (min-width: 1200px) {
     .container {
         max-width: 1140px;
