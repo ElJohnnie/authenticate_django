@@ -79,3 +79,7 @@ def vacines(request):
 
 def datapatient(request): 
 	return render(request, 'authenticate/datapatient.html', {})	
+
+def data_health(request): 
+	return render(request, 'authenticate/data_health.html', {})
+

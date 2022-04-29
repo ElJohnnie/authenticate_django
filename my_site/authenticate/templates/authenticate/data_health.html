@@ -1,0 +1,128 @@
+{% extends 'authenticate/base.html' %}
+{% block content %}
+	{% load static %}
+<div class="container mx-auto">
+    <form>
+    <h1 class ="text-center"> Inserir dados de saúde </h1>
+        <div class="date">
+            <label for="date">Data</label>
+            <input 
+                    type="date" 
+                    class="form-control" 
+                    id="date" 
+                    name="date" 
+                    required
+                >
+        </div>
+    <h1 class ="text-center"> IMC </h1>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="altura">Insira altura:</label>
+                <input 
+                    type="number" 
+                    class="form-control" 
+                    id="altura" 
+                    name="altura" 
+                    placeholder="cm"
+                    required
+                >
+            </div>
+            <div class="form-group col-md-4">
+                <label for="peso">Insira peso:</label>
+                <input 
+                    type="number" 
+                    class="form-control" 
+                    id="peso" 
+                    name="peso" 
+                    placeholder="kg"
+                    required
+                >
+            </div>
+            <div class="form-group col-md-4">
+                <label for="imc">IMC é:</label>
+                <input 
+                    type="number" 
+                    class="form-control" 
+                    id="imc" 
+                    name="imc" 
+                    required
+                >
+            </div>
+        </div>    
+    <h1 class ="text-center"> Pressão Arterial </h1>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="sistolica">Sistólica</label>
+                <input 
+                    type="number" 
+                    class="form-control" 
+                    id="sistolica" 
+                    name="sistolica"
+                    placeholder="mm hg(máx)"
+                    required 
+                >
+            </div>
+            <div class="form-group col-md-3">
+                <label for="diastolica">Diastólica:</label>
+                <input 
+                    type="number"
+                    class="form-control" 
+                    id="diastolica" 
+                    name="diastolica"
+                    placeholder="mm hg(mín)"
+                    required
+                >
+            </div>
+            <div class="form-group col-md-3">
+                <label for="batimentos">Batimentos:</label>
+                <input 
+                    type="number"
+                    class="form-control" 
+                    id="batimentos" 
+                    name="batimentos"
+                    placeholder="por minuto"
+                    required
+                >
+            </div>
+            <div class="form-group col-md-3">
+                <label for="pressao">Pressão está:</label>
+                <input 
+                    type="number"
+                    class="form-control" 
+                    id="pressao" 
+                    name="pressao"
+                    required
+                >
+            </div>
+        </div>    
+    <h1 class ="text-center"> Glicemia </h1>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="glicemia">Glicemia Jejum:</label>
+                <input 
+                    type="number" 
+                    class="form-control" 
+                    id="glicemia" 
+                    name="glicemia"
+                    placeholder="mg/dL"
+                    required 
+                >
+            </div>
+            <div class="form-group col-md-6">
+                <label for="hemoglobina">Hemoglobina Glicada - A1C:</label>
+                <input 
+                    type="number" 
+                    class="form-control" 
+                    id="hemoglobina" 
+                    name="hemoglobina"
+                    placeholder="%"
+                    required 
+                >
+            </div>
+        </div>
+        <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-info">Voltar</a>
+        <button class="button btn btn-primary">Salvar</button>
+    </form>
+</div>
+
+{% endblock %}
