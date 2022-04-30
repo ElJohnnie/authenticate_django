@@ -32,6 +32,12 @@ class Vacines(models.Model):
         null=False,
     )
 
+    healthcenter = models.CharField(
+        max_length=200,
+        blank=False,
+        null=False,
+    )
+
     objects = models.Manager()
 
 

@@ -2,7 +2,8 @@
 {% block content %}
 {% load static %}
 <section class="mb-5">
-    <form method="POST" class="border p-3">
+    <form method="POST" action="{% url 'vacines' %}" class="border p-3">
+        {% csrf_token %}
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="date">Data</label>
@@ -91,31 +92,27 @@
     <table class="table mb-5">
         <thead class="thead-white">
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+                <th scope="col">Id</th>
+                <th scope="col">Data</th>
+                <th scope="col">Vacina</th>
+                <th scope="col">Dose</th>
+                <th scope="col">Lote</th>
+                <th scope="col">Cod Aplicador</th>
+                <th scope="col">Cod Estabelecimento</th>
             </tr>
         </thead>
         <tbody>
+            {% for vacine in vacines %}
             <tr>
                 <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>{{ vacine.date }}</td>
+                <td>{{ vacine.vacine }}</td>
+                <td>{{ vacine.dose }}</td>
+                <td>{{ vacine.batch }}</td>
+                <td>{{ vacine.applicator }}</td>
+                <td>{{ vacine.healthcenter }}</td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </section>
