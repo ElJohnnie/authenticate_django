@@ -81,6 +81,7 @@ def change_password(request):
 @login_required	
 def vacines(request):
 	if request.method == 'POST':
+		# fazer validações ainda
 		date = request.POST['date']
 		vacine = request.POST['vacine']
 		dose = request.POST['dose']
@@ -95,7 +96,7 @@ def vacines(request):
 			vaccinator=vaccinator,
 			healthcenter=healthcenter,
 			)
-		vacines.save()
+		vacinesPost.save()
 		messages.success(request, ('Salvo com sucess'))
 	vacinesGet = Vacines.objects.all()
 	context = {
