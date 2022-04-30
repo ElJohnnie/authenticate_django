@@ -103,15 +103,15 @@
         </thead>
         <tbody>
             {% for vacine in vacines %}
-            <tr>
-                <th scope="row">1</th>
-                <td>{{ vacine.date }}</td>
-                <td>{{ vacine.vacine }}</td>
-                <td>{{ vacine.dose }}</td>
-                <td>{{ vacine.batch }}</td>
-                <td>{{ vacine.applicator }}</td>
-                <td>{{ vacine.healthcenter }}</td>
-            </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>{{ vacine.date }}</td>
+                    <td>{{ vacine.vacine }}</td>
+                    <td>{{ vacine.dose }}</td>
+                    <td>{{ vacine.batch }}</td>
+                    <td>{{ vacine.applicator }}</td>
+                    <td>{{ vacine.healthcenter }}</td>
+                </tr>
             {% endfor %}
         </tbody>
     </table>

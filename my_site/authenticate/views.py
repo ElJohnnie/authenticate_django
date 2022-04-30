@@ -97,7 +97,7 @@ def vacines(request):
 			healthcenter=healthcenter,
 			)
 		vacinesPost.save()
-		messages.success(request, ('Salvo com sucess'))
+		messages.success(request, ('Salvo com sucesso.'))
 	vacinesGet = Vacines.objects.all()
 	context = {
         'vacines': vacinesGet
