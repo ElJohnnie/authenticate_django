@@ -40,5 +40,7 @@ class Vacines(models.Model):
 
     objects = models.Manager()
 
+    
+
 
 

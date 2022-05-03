@@ -137,3 +137,5 @@ def datapatient(request):
 def data_health(request): 
 	return render(request, 'authenticate/data_health.html', {})
 
+
+

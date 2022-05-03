@@ -4,6 +4,8 @@ from django import forms
 
 from .models import Vacines
 
+
+
 class EditProfileForm(UserChangeForm):
 	
 	password = forms.CharField(label="", widget=forms.TextInput(attrs={'type':'hidden'}))
@@ -42,3 +44,5 @@ class UpdateVacines(forms.ModelForm):
     class Meta:
         model=Vacines
         fields="__all__"
+
+

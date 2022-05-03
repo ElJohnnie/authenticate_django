@@ -14,12 +14,13 @@
                     class="form-control" 
                     id="date" 
                     name="date" 
+                    value="{{data_health.date}}"
                     required
                 >
         </div>
         </div>
         
-        <form method="POST" action="" class="border p-3 ">
+        <form method="POST" action="{% url 'data_health' %}{{data_health.id}}" class="border p-3 ">
           {% csrf_token %}
           <h1 class ="text-center">Cálculo IMC </h1>
           <div class="form-row d-flex justify-content-between ">
@@ -30,6 +31,7 @@
                     class="form-control" 
                     id="height" 
                     name="height" 
+                    value="{{height.date}}"
                     placeholder="cm"
                     required
                 >
@@ -40,8 +42,9 @@
                 <input 
                 type="number" step="0.01"
                 class="form-control" 
-                id="Weight" 
-                name="Weight" 
+                id="weight" 
+                name="weight"
+                value="{{weight.date}}" 
                 placeholder="kg"
                 required
             >
@@ -53,6 +56,7 @@
                 class="form-control" 
                 id="imc" 
                 name="imc" 
+                value="{{imc.date}}"
                 required
             >
             </div>
@@ -75,7 +79,8 @@
                     type="number" 
                     class="form-control" 
                     id="systolic" 
-                    name="systolic" 
+                    name="systolic"
+                    value="{{systolic.date}}" 
                     placeholder="mm hg(máx)"
                     required
                 >
@@ -88,6 +93,7 @@
                 class="form-control" 
                 id="diastolic" 
                 name="diastolic" 
+                value="{{diastolic.date}}"
                 placeholder="mm hg(mín)"
                 required
             >
@@ -99,6 +105,7 @@
                 class="form-control" 
                 id="beats" 
                 name="beats"
+                value="{{beats.date}}"
                 placeholder="por minuto" 
                 required
             >
@@ -123,6 +130,7 @@
                     class="form-control" 
                     id="glucose" 
                     name="glucose" 
+                    value="{{glucose.date}}"
                     placeholder="mg/dL"
                     required
                 >
@@ -135,6 +143,7 @@
                 class="form-control" 
                 id="hemoglobin" 
                 name="hemoglobin" 
+                value="{{hemoglobin.date}}"
                 placeholder="%"
                 required
             >
@@ -147,4 +156,5 @@
         </div>
         </form>
     </section>
+    
 {% endblock %}
