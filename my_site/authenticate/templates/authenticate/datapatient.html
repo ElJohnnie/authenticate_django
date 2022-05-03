@@ -1,108 +1,96 @@
-{% extends 'authenticate/base.html' %}
-{% block content %}
-	{% load static %}
-    <div class="  border p-3 mt-5">
-        <h1 class ="text-center m-4">Dados Usuário</h1>
-        <form class="needs-validation" novalidate>
-            <div class="form-row mb-2">
+{% extends 'authenticate/base.html' %} {% block content %} {% load static %}
+<div class="border p-3 mt-5 mr-5 ml-5">
+  <div class="container-fluid formDatapatient">
+    <h1 class="text-center m-4">Dados Usuário</h1>
+    <form action="." method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-row mb-2">
             <div class="form-group col-md-4 ">
-                <label for="validationCustom01">Primeiro nome</label>
-                <input type="text" class="form-control" id="validationCustom01" placeholder="Nome" value="#" required>
-                 <div class="valid-feedback">
-                  Tudo certo!
-                 </div>
+              <label>{{ form.first_name.label }}</label>
+              {{ form.first_name }}
             </div>
             <div class="form-group col-md-6 ">
-                <label for="validationCustom02">Sobrenome</label>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="Sobrenome" value="#" required>
-                <div class="valid-feedback">
-                  Tudo certo!
-                </div>
+              <label>{{ form.last_name.label }}</label>
+              {{ form.last_name }}
             </div>
             <div class="form-group col-md-2 ">
-                <label for="date">Data Nascimento</label>
-                <input 
-                    type="date" 
-                    class="form-control" 
-                    id="date" 
-                    name="date" 
-                    required
-                >
+              <label>{{ form.date_of_birth.label }}</label>
+              {{ form.date_of_birth }}
             </div>
-            </div>
-             <div class="form-row mb-2">
+        </div>
+        <div class="form-row mb-2">
             <div class="form-group col-md-6">
-              <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+              <label>{{ form.email.label }}</label>
+              {{ form.email }}
             </div>
             <div class="form-group col-md-3">
-                <label>Telefone</label>
-                <input type="text" class="form-control">
+              <label>{{ form.phonenumber.label }}</label>
+              {{ form.phonenumber }}
             </div>
             <div class="form-group col-md-3">
-                <label>Telefone</label>
-                <input type="text" class="form-control">
+              <label>{{ form.landline_phonenumber.label }}</label>
+              {{ form.landline_phonenumber }}
             </div>
-            </div>
-            <div class="form-row mb-2">
+        </div>
+        <div class="form-row mb-2">
             <div class="form-group col-md-9">
-                <label for="inputAddress">Endereço</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
+              <label>{{ form.zipcode.label }}</label>
+              {{ form.zipcode }}
             </div>
             <div class="form-group col-md-3">
-                <label for="inputAddress2">Complemento</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
-            </div>   
+              <label>{{ form.address.label }}</label>
+              {{ form.address }}
             </div>
-            <div class="form-row mb-2">
+        </div>
+        <div class="form-row mb-2">
             <div class="form-group col-md-2">
-                <label for="inputCEP">CEP</label>
-                <input type="text" class="form-control" id="inputCEP">
-              </div>
-              <div class="form-group col-md-3">
-                <label for="inputDistrict">Bairro</label>
-                <input type="text" class="form-control" id="inputDistrict">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputCity">Cidade</label>
-                <input type="text" class="form-control" id="inputCity">
-              </div>
-              <div class="form-group col-md-1">
-                <label for="inputEstado">UF</label>
-                <select id="inputEstado" class="form-control">
-                  <option selected>Escolher...</option>
-                  <option>...</option>
-                </select>
-              </div>
+              <label>{{ form.complement.label }}</label>
+              {{ form.complement }}
             </div>
-            <div class="form-group row justify-content-center flex-column  mt-5 ">
-            <div class="d-flex justify-content-end pl-2 mr-3 " >
-                <button class="btn btn-primary mr-5" type="submit">Editar</button>
-                <button class="btn btn-primary " type="submit">Enviar</button>
+            <div class="form-group col-md-3">
+              <label>{{ form.neighborhood.label }}</label>
+              {{ form.neighborhood }}
             </div>
-        </form>
-    </div>
-    
-    
-      
-      <script>
-      // Exemplo de JavaScript inicial para desativar envios de formulário, se houver campos inválidos.
-      (function() {
-        'use strict';
-        window.addEventListener('load', function() {
-          // Pega todos os formulários que nós queremos aplicar estilos de validação Bootstrap personalizados.
-          var forms = document.getElementsByClassName('needs-validation');
-          // Faz um loop neles e evita o envio
-          var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
-      </script>
-{% endblock %}
+            <div class="form-group col-md-6">
+              <label>{{ form.city.label }}</label>
+              {{ form.city }}
+            </div>
+            <div class="form-group col-md-1">
+              <label>{{ form.state.label }}</label>
+              {{ form.state }}
+            </div>
+        </div>
+        <div class="form-group row justify-content-center flex-column  mt-5 ">
+            <div class="d-flex justify-content-end pl-2 mr-3 ">
+              <input class="btn btn-primary mr-3" type="submit" value="Salvar" />
+              <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-info">Voltar</a>
+              <!--<input class="btn btn-btn-secondary" type="button" value="Voltar" onclick="history.back()" />-->
+            </div>
+    </form>
+  </div>
+</div>
+
+
+
+    <script>
+        // Exemplo de JavaScript inicial para desativar envios de formulário, se houver campos inválidos.
+        (function() {
+            'use strict';
+            /*window.addEventListener('load', function() {
+              // Pega todos os formulários que nós queremos aplicar estilos de validação Bootstrap personalizados.
+              var forms = document.getElementsByClassName('needs-validation');
+              // Faz um loop neles e evita o envio
+              var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                  if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                  }
+                  form.classList.add('was-validated');
+                }, false);
+              });
+            }, false);*/
+        })();
+    </script>
+    {% endblock %}
