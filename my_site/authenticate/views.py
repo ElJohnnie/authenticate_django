@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash 
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib import messages 
-from .forms import SignUpForm, EditProfileForm 
+from .forms import SignUpForm, EditProfileForm, UpdateVacines
 from django.contrib.auth.decorators import login_required
 from .models import Vacines
+import logging
 # Create your views here.
 def home(request): 
 	return render(request, 'authenticate/home.html', {})
@@ -103,6 +104,31 @@ def vacines(request):
         'vacines': vacinesGet
     }
 	return render(request, 'authenticate/vacines.html',  context)
+
+@login_required	
+def vacinesEdit(request, id):
+	vacineEdit = Vacines.objects.get(id = id)
+	form = UpdateVacines()
+	if request.method == 'POST':
+		form = UpdateVacines(request.POST, instance=vacineEdit)
+		if form.is_valid():
+			form.save(commit=True)
+			messages.success(request, ('Salvo com sucesso.'))
+			return redirect("/vacines")
+		else:
+			messages.error(request, ('Erro na edição.'))
+			return redirect("/vacines")
+	context = {
+        'vacine': vacineEdit
+    }
+	return render(request, 'authenticate/vacines_edit.html',  context)
+@login_required	
+def vacinesDelete(request, id):
+	vacineEdit = Vacines.objects.get(id = id)
+	vacineEdit.delete()
+	messages.success(request, ('Deletado com sucesso.'))
+	return redirect("/vacines")
+
 
 @login_required	
 def datapatient(request): 

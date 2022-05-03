@@ -2,6 +2,8 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 from django import forms
 
+from .models import Vacines
+
 class EditProfileForm(UserChangeForm):
 	
 	password = forms.CharField(label="", widget=forms.TextInput(attrs={'type':'hidden'}))
@@ -35,3 +37,8 @@ class SignUpForm(UserCreationForm):
 	    self.fields['password2'].widget.attrs['placeholder'] = 'Confirme sua senha'
 	    self.fields['password2'].label = ''
 	    self.fields['password2'].help_text = '<span class="form-text text-muted"><small>Digite a mesma senha de antes, para verificação.</small></span>'
+
+class UpdateVacines(forms.ModelForm):
+    class Meta:
+        model=Vacines
+        fields="__all__"
