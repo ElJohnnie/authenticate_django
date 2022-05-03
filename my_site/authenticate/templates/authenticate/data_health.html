@@ -1,7 +1,166 @@
 {% extends 'authenticate/base.html' %}
 {% block content %}
 	{% load static %}
-<div class="container mx-auto">
+
+    
+    <section>
+        <h1 class ="text-center"> Inserir dados de saúde </h1>
+        <div class="d-flex justify-content-end pl-2 mb-2 col-12">
+           
+        <div class="date col-2 ">
+            <label for="date">Data</label>
+            <input 
+                    type="date" 
+                    class="form-control" 
+                    id="date" 
+                    name="date" 
+                    required
+                >
+        </div>
+        </div>
+        
+        <form method="POST" action="" class="border p-3 ">
+          {% csrf_token %}
+          <h1 class ="text-center">Cálculo IMC </h1>
+          <div class="form-row d-flex justify-content-between ">
+            <div class="form-group col-md-3">
+                <label for="altura">Insira altura:</label>
+                <input 
+                    type="number" step="0.01" 
+                    class="form-control" 
+                    id="height" 
+                    name="height" 
+                    placeholder="cm"
+                    required
+                >
+          
+            </div>
+            <div class="form-group col-md-3">
+                <label for="peso">Insira peso:</label>
+                <input 
+                type="number" step="0.01"
+                class="form-control" 
+                id="Weight" 
+                name="Weight" 
+                placeholder="kg"
+                required
+            >
+            </div>
+            <div class="form-group col-md-3">
+                <label for="imc">IMC é:</label>
+                <input 
+                type="number" step="0.01"
+                class="form-control" 
+                id="imc" 
+                name="imc" 
+                required
+            >
+            </div>
+            <div class="">
+                <button type="submit" class="btn btn-primary mt-3 ">Enviar</button>
+            </div>
+            
+        </div>
+        </form>
+
+    </section>
+    <section>
+        <form method="POST" action="" class="border p-3 mt-2">
+          {% csrf_token %}
+          <h1 class ="text-center"> Pressão Arterial </h1>
+          <div class="form-row d-flex justify-content-between ">
+            <div class="form-group col-md-3">
+                <label for="sistolica">Sistólica</label>
+                <input 
+                    type="number" 
+                    class="form-control" 
+                    id="systolic" 
+                    name="systolic" 
+                    placeholder="mm hg(máx)"
+                    required
+                >
+          
+            </div>
+            <div class="form-group col-md-3">
+                <label for="diastolica">Diastólica:</label>
+                <input 
+                type="number"
+                class="form-control" 
+                id="diastolic" 
+                name="diastolic" 
+                placeholder="mm hg(mín)"
+                required
+            >
+            </div>
+            <div class="form-group col-md-3">
+                <label for="batimentos">Batimentos:</label>
+                <input 
+                type="number"
+                class="form-control" 
+                id="beats" 
+                name="beats"
+                placeholder="por minuto" 
+                required
+            >
+            </div>
+            <div class="">
+                <button type="submit" class="btn btn-primary mt-3 ">Enviar</button>
+            </div>
+            
+        </div>
+        </form>
+
+    </section>
+    <section>
+        <form method="POST" action="" class="border p-3 mt-2">
+          {% csrf_token %}
+          <h1 class ="text-center"> Glicemia </h1>
+          <div class="form-row d-flex justify-content-between ">
+            <div class="form-group col-md-3">
+                <label for="glicemia">Glicemia Jejum:</label>
+                <input 
+                    type="number" 
+                    class="form-control" 
+                    id="glucose" 
+                    name="glucose" 
+                    placeholder="mg/dL"
+                    required
+                >
+          
+            </div>
+            <div class="form-group col-md-3">
+                <label for="hemoglobina">Hemoglobina Glicada - A1C:</label>
+                <input 
+                type="number" step="0.01"
+                class="form-control" 
+                id="hemoglobin" 
+                name="hemoglobin" 
+                placeholder="%"
+                required
+            >
+            </div>
+            
+            <div class="">
+                <button type="submit" class="btn btn-primary mt-3 ">Enviar</button>
+            </div>
+            
+        </div>
+        </form>
+
+    </section>
+    
+         
+          
+           
+            
+      
+           
+   
+   
+
+
+    
+<!-- <div class="container mx-auto">
     <form>
     <h1 class ="text-center"> Inserir dados de saúde </h1>
         <div class="date">
@@ -14,40 +173,7 @@
                     required
                 >
         </div>
-    <h1 class ="text-center"> IMC </h1>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="altura">Insira altura:</label>
-                <input 
-                    type="number" 
-                    class="form-control" 
-                    id="altura" 
-                    name="altura" 
-                    placeholder="cm"
-                    required
-                >
-            </div>
-            <div class="form-group col-md-4">
-                <label for="peso">Insira peso:</label>
-                <input 
-                    type="number" 
-                    class="form-control" 
-                    id="peso" 
-                    name="peso" 
-                    placeholder="kg"
-                    required
-                >
-            </div>
-            <div class="form-group col-md-4">
-                <label for="imc">IMC é:</label>
-                <input 
-                    type="number" 
-                    class="form-control" 
-                    id="imc" 
-                    name="imc" 
-                    required
-                >
-            </div>
+   
         </div>    
     <h1 class ="text-center"> Pressão Arterial </h1>
         <div class="form-row">
@@ -122,7 +248,7 @@
         </div>
         <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-info">Voltar</a>
         <button class="button btn btn-primary">Salvar</button>
-    </form>
-</div>
+    </form> -->
+
 
 {% endblock %}
