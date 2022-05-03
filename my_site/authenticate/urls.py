@@ -13,5 +13,6 @@ urlpatterns = [
     path('vacines/', views.vacines, name ="vacines"),
     path('vacines/<int:id>', views.vacinesEdit, name ="vacines_edit"),
     path('vacines/delete/<int:id>', views.vacinesDelete, name ="vacines_delete"),
+    path('data_health/', views.data_health, name='data_health'),
 ]
 
