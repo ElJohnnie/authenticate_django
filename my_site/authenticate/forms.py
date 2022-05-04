@@ -27,6 +27,8 @@ class PatientForm(forms.ModelForm):
 
 from .models import Vacines
 
+
+
 class EditProfileForm(UserChangeForm):
 	
 	password = forms.CharField(label="", widget=forms.TextInput(attrs={'type':'hidden'}))
@@ -62,6 +64,6 @@ class SignUpForm(UserCreationForm):
 		self.fields['password2'].help_text = '<span class="form-text text-muted"><small>Digite a mesma senha de antes, para verificação.</small></span>'
 
 class UpdateVacines(forms.ModelForm):
-	class Meta:
-		model=Vacines
-		fields="__all__"
+    class Meta:
+        model=Vacines
+        fields="__all__"
