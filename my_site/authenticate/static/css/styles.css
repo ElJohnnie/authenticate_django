@@ -136,8 +136,8 @@ table {
 }
 
 .main {
-    min-height: 75vh;
-    width: auto;
+    min-height: 75vw;
+    width: 100%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -158,6 +158,7 @@ footer {
     margin-top: 25px;
     max-width: auto !important;
 }
+
 
 .button,
 .login {

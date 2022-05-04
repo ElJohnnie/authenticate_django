@@ -79,6 +79,7 @@ def change_password(request):
 	context = {'form': form}
 	return render(request, 'authenticate/change_password.html', context)
 
+
 @login_required
 def datapatient(request): 
 	form = PatientForm()
@@ -103,7 +104,14 @@ def datapatient(request):
 			'form': form
 		}
 		return render(request, 'authenticate/datapatient.html', context=context)
-		
+
+def history(request): 
+	return render(request, 'authenticate/history.html', {})
+
+def history_vacines(request):
+	return render(request, 'authenticate/history_vacines.html', {})
+
+
 @login_required	
 def vacines(request):
 	if request.method == 'POST':
