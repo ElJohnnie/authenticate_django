@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash 
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib import messages 
-from .forms import SignUpForm, EditProfileForm, UpdateVacines
 from django.contrib.auth.decorators import login_required
-from .models import Vacines
+from .forms import PatientForm, SignUpForm, EditProfileForm, UpdateVacines 
+from .models import Patient, Vacines
 import logging
 # Create your views here.
 def home(request): 
@@ -79,11 +79,38 @@ def change_password(request):
 	context = {'form': form}
 	return render(request, 'authenticate/change_password.html', context)
 
+
+@login_required
+def datapatient(request): 
+	form = PatientForm()
+	try:
+		form = PatientForm(instance = Patient.objects.first())
+	except Patient.DoesNotExist:
+		form = PatientForm()
+
+	if request.method == "GET":
+		context = {
+			'form': form
+		}
+		return render(request, 'authenticate/datapatient.html', context=context)	
+	else:
+		form = PatientForm(request.POST, instance = Patient.objects.first())
+		if form.is_valid():
+			form.save()
+			messages.success(request, "Dados salvos com sucesso!")
+		else:
+			messages.error(request, form.errors)
+		context = {
+			'form': form
+		}
+		return render(request, 'authenticate/datapatient.html', context=context)
+
 def history(request): 
 	return render(request, 'authenticate/history.html', {})
 
 def history_vacines(request):
 	return render(request, 'authenticate/history_vacines.html', {})
+
 
 @login_required	
 def vacines(request):

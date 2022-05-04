@@ -159,7 +159,10 @@ footer {
     max-width: auto !important;
 }
 
-.button {
+
+.button,
+.login {
+    background: #72c0b8;
     border: none;
     border-radius: 25px;
     color: #fff;
@@ -218,4 +221,8 @@ footer {
     .container {
         max-width: 540px;
     }
+}
+
+.formDatapatient label {
+    margin-bottom: 10px;
 }
