@@ -136,8 +136,8 @@ table {
 }
 
 .main {
-    min-height: 75vw;
-    width: 100%;
+    min-height: 75vh;
+    width: auto;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -165,46 +165,58 @@ footer {
     border: none;
     border-radius: 25px;
     color: #fff;
-    align-items: center;
+    align-items: center !important;
     font-size: 18px;
     height: 38px;
     margin: 20px auto 5px;
     width: 300px;
 }
 
+.login {
+    background: #72c0b8;
+}
+
 .register {
     background-color: #84b0da;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    padding-top: .6rem;
 }
 
 .login:hover {
     background: #519992;
     transition: all .2s;
+    color: #fff;
+    text-decoration: none;
 }
 
 .register:hover {
     background-color: #5088bd;
     transition: all .2s;
+    color: #fff;
+    text-decoration: none;
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
     .container {
         max-width: 1140px;
     }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
     .container {
         max-width: 960px;
     }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .container {
         max-width: 720px;
     }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
     .container {
         max-width: 540px;
     }

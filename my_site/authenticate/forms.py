@@ -25,6 +25,8 @@ class PatientForm(forms.ModelForm):
 
 
 
+from .models import Vacines
+
 class EditProfileForm(UserChangeForm):
 	
 	password = forms.CharField(label="", widget=forms.TextInput(attrs={'type':'hidden'}))
@@ -48,11 +50,18 @@ class SignUpForm(UserCreationForm):
 		self.fields['username'].widget.attrs['placeholder'] = 'Usuário'
 		self.fields['username'].label = ''
 		self.fields['username'].help_text = '<span class="form-text text-muted"><small>Requerido 150 caracteres ou menos. Apenas letras, dígitos e @/./+/-/_.</small></span>'
+
 		self.fields['password1'].widget.attrs['class'] = 'form-control'
 		self.fields['password1'].widget.attrs['placeholder'] = 'Senha'
 		self.fields['password1'].label = ''
 		self.fields['password1'].help_text = '<ul class="form-text text-muted small"><li>Sua senha não pode ser muito parecida com suas outras informações pessoais.</li><li>Sua senha deve conter pelo menos 8 caracteres.</li><li>Sua senha não pode ser uma senha comumente usada.</li><li>Sua senha não pode ser totalmente numérica.</li></ul>'
+
 		self.fields['password2'].widget.attrs['class'] = 'form-control'
 		self.fields['password2'].widget.attrs['placeholder'] = 'Confirme sua senha'
 		self.fields['password2'].label = ''
 		self.fields['password2'].help_text = '<span class="form-text text-muted"><small>Digite a mesma senha de antes, para verificação.</small></span>'
+
+class UpdateVacines(forms.ModelForm):
+	class Meta:
+		model=Vacines
+		fields="__all__"

@@ -68,6 +68,7 @@ class Patient(models.Model):
 
 
 class Vacines(models.Model):
+    id = models.AutoField(primary_key=True)
     date = models.DateField(
         blank=False,
         null=False,
@@ -80,7 +81,6 @@ class Vacines(models.Model):
     )
 
     dose = models.IntegerField(
-        max_length=3,
         blank=False,
         null=False,
     )
@@ -97,5 +97,13 @@ class Vacines(models.Model):
         null=False,
     )
 
+    healthcenter = models.CharField(
+        max_length=200,
+        blank=False,
+        null=False,
+    )
+
     objects = models.Manager()
+
+
 
